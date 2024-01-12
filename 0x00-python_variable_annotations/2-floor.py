@@ -1,4 +1,4 @@
-#!/usr/bin/env pythpn3
+#!/usr/bin/env python3
 """" This function returns the floor of a float number. """
 import math
 
