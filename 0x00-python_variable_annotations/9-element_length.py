@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""
-Annotates function’s parameters and, return values with the appropriate types
-"""
+""" function’s parameters that return values with the appropriate types """
 from typing import List, Tuple
 
 
