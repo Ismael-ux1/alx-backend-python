@@ -3,8 +3,9 @@
 from typing import Tuple, List, Any
 
 
-
 """ Function to zoom an array """
+
+
 def zoom_array(lst: Tuple, factor: int = 2) -> List:
     """
     Create a new list
