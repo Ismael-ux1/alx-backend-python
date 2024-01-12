@@ -1,4 +1,4 @@
-#!/usr/bin/usr/env python3
+#!/usr/bin/env python3
 """ This function returns the sum of a list of float numbers. """
 from typing import List
 
