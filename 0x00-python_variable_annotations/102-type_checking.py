@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" mypy """
+""" Module for zooming elements in a tuple. """
 from typing import Tuple, List, Any
 
 
