@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 A function that Returns the first element of the list if it exists,
 other wise returns None
