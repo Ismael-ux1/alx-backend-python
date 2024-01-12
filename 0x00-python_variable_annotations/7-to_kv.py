@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ This function takes a string and an int/float, and returns a tuple. """
 from typing import Union, Tuple
 
