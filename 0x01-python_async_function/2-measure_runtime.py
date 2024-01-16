@@ -7,7 +7,7 @@ from typing import List
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-def measure_time(n: int, max_delay: int) -> List[float]:
+def measure_time(n: int, max_delay: int) -> float:
     """
     Arguments:
     - n (int): Number of times to execute wait_n.
