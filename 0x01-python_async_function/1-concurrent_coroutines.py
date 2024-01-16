@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
-"""
-Concurrently execute the wait_random coroutine 'n',
-times with the specified max_delay.
-"""
+""" Concurrently execute the wait_random coroutine 'n' times. """
 import asyncio
-from importlib import import_module
+import random
 
-wait_random = import_module('0-basic_async_syntax').wait_random
+wait_random = __import__("0-basic_async_syntax").wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> list:
