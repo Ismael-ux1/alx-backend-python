@@ -24,7 +24,7 @@ async def measure_runtime() -> float:
         async_comprehension(),
         async_comprehension(),
         async_comprehension()
-        )
+    )
 
     # Record the end time
     end_time = asyncio.get_event_loop().time()
