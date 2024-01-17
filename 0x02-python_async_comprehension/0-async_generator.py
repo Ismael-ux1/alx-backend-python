@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Asyncronous generator that yields a random number between 0 and 1- """
+""" Asyncronous generator that yields a random number between 0 and 10 """
 import asyncio
 import random
 
@@ -9,8 +9,9 @@ async def async_generator():
     Asyncronous generator that yields a random number between 0 and 10
 
     Yields:
-    - int: A random number between 0 and 10
+    - float: A random floating-point number between 0 and 10
     """
+    # Loop 10 times to yield 10 random numbers
     for _ in range(10):
         # Asyncronously wait for 1 second
         await asyncio.sleep(1)
