@@ -3,8 +3,11 @@
 import unittest
 from unittest.mock import patch
 from parameterized import parameterized
+from parameterized import parameterized_class
 from client import GithubOrgClient
 from unittest.mock import PropertyMock
+import requests
+from fixtures import TEST_PAYLOAD
 
 
 class TestGithubOrgClient(unittest.TestCase):
@@ -93,3 +96,29 @@ class TestGithubOrgClient(unittest.TestCase):
         # Test that the has_license method returns the expected boolean
         self.assertEqual(client.has_license(repo, license_key),
                          expected_output)
+
+
+@parameterized_class(('org_payload', 'repos_payload',
+                      'expected_repos', 'apache2_repos'), TEST_PAYLOAD)
+class TestIntegrationGithubOrgClient(unittest.TestCase):
+    """Integration tests for GithubOrgClient"""
+
+    @classmethod
+    def setUpClass(cls):
+        """Set up the tests"""
+        cls.get_patcher = patch.object(requests, 'get')
+
+        # Start the patcher
+        cls.mock_get = cls.get_patcher.start()
+
+        # Set the side_effect of .json() to return the correct fixtures
+        cls.mock_get.return_value.json.side_effect = [
+            cls.org_payload, cls.repos_payload,
+            cls.expected_repos, cls.apache2_repos
+        ]
+
+    @classmethod
+    def tearDownClass(cls):
+        """Tear down the tests"""
+        # Stop the patcher
+        cls.get_patcher.stop()
