@@ -20,3 +20,17 @@ class TestAccessNestedMap(unittest.TestCase):
                                path: Tuple[str], expected: Any) -> None:
         """ nested_map """
         self.assertEqual(access_nested_map(nested_map, path), expected)
+
+    @parameterized.expand([
+        ({}, ("a",), "a", "a"),
+        ({"a": 1}, ("a", "b"), "b", "b")
+    ])
+    def test_access_nested_map_exception(self, _, nested_map, path, expected):
+        """
+        This is a context manager that checks,
+        if the function raises a KeyError with the,
+        expected message for each input
+        """
+        with self.assertRaises(KeyError) as cm:
+            access_nested_map(nested_map, path)
+        self.assertEqual(str(cm.exception), repr(expected))
